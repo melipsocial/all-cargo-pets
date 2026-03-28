@@ -34,12 +34,12 @@ app.include_router(admin_router.router, prefix="/api/admin", tags=["admin"])
 
 @app.get("/")
 def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html", context={"request": request})
 
 @app.get("/solicitud")
 def form_solicitud(request: Request):
-    return templates.TemplateResponse("solicitud.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="solicitud.html", context={"request": request})
 
 @app.get("/dashboard")
 def get_dashboard(request: Request):
-    return templates.TemplateResponse("admin.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="admin.html", context={"request": request})
