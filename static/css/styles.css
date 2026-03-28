@@ -12,7 +12,7 @@
   --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Paw Print Trail */
+/* Feature Trail */
 .paw-trail {
   position: fixed;
   bottom: 0;
@@ -26,7 +26,7 @@
 }
 .paw {
   position: absolute;
-  width: 60px;
+  width: 50px;
 }
 /* Left to right diagonal path */
 .paw-1 { bottom: -2%; left: 5%; transform: rotate(35deg); }
@@ -34,8 +34,6 @@
 .paw-3 { bottom: 30%; left: 19%; transform: rotate(35deg); }
 .paw-4 { bottom: 45%; left: 26%; transform: rotate(45deg); }
 .paw-5 { bottom: 60%; left: 33%; transform: rotate(35deg); }
-.paw-6 { bottom: 75%; left: 40%; transform: rotate(45deg); }
-.paw-7 { bottom: 90%; left: 47%; transform: rotate(35deg); }
 
 * {
   margin: 0;
@@ -48,81 +46,93 @@ body {
   background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Navbar */
+/* Animations */
+@keyframes floating {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navbar Modern */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  background: var(--white);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 1.2rem 8%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--primary);
-  text-decoration: none;
+.nav-links {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 2rem;
 }
 
+/* Buttons Modern */
 .btn-primary {
   background-color: var(--primary);
   color: var(--white);
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.9rem 2rem;
+  border-radius: 50px; /* Brine style pill buttons */
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: none;
   cursor: pointer;
   display: inline-block;
+  box-shadow: 0 4px 15px rgba(29, 53, 87, 0.2);
 }
 
 .btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
   background-color: var(--secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(4, 102, 200, 0.3);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
 }
 
 .btn-outline {
-  background-color: var(--white);
-  color: var(--primary);
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   border: 2px solid var(--primary);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  color: var(--primary);
+  transition: all 0.4s ease;
+  background: transparent;
 }
 
 .btn-outline:hover {
-  background-color: var(--primary);
-  color: var(--white);
+  background: var(--primary);
+  color: white;
 }
 
-/* Hero Section */
+/* --- HERO SECTION (DESKTOP) --- */
 .hero {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 5rem 5%;
-  background: radial-gradient(circle at 20% 0%, rgba(29, 53, 87, 0.12) 0%, rgba(253, 253, 253, 0.8) 50%, rgba(230, 57, 70, 0.08) 100%);
-  min-height: 70vh;
+  padding: 8rem 5% 5rem 5%;
+  background: radial-gradient(circle at 50% 50%, rgba(29, 53, 87, 0.08) 0%, rgba(253, 253, 253, 1) 100%);
+  min-height: 85vh;
   justify-content: center;
   overflow: hidden;
 }
 
+/* Mascotas en las esquinas (SOLO DESKTOP) */
 .hero::before, .hero::after {
   content: '';
   position: absolute;
@@ -133,38 +143,88 @@ nav {
   background-repeat: no-repeat;
   background-position: bottom center;
   mix-blend-mode: multiply;
-  opacity: 0.85;
+  opacity: 0.95;
   z-index: 0;
 }
 
 .hero::before {
-  left: -20px;
+  left: 0;
   background-image: url('/static/corner_dog.png');
 }
 
 .hero::after {
-  right: -20px;
+  right: 0;
   background-image: url('/static/corner_cat.png');
 }
 
 .hero > * {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 3.5rem;
+  font-weight: 800;
   color: var(--primary);
-  margin: 0 auto 1.5rem auto;
-  line-height: 1.2;
-  max-width: 800px;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  max-width: 900px;
 }
 
 .hero p {
   font-size: 1.25rem;
   color: #555;
-  margin-bottom: 2.5rem;
-  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  max-width: 700px;
+}
+
+/* Contenedor de mascotas para móvil (OCULTO EN DESKTOP) */
+.mobile-pets {
+  display: none !important;
+}
+
+/* --- RESPONSIVE (CELULAR) --- */
+@media (max-width: 768px) {
+  /* 1. Quitamos las mascotas de las esquinas */
+  .hero::before, .hero::after {
+    display: none !important;
+  }
+  
+  /* 2. Mostramos las mascotas abajo del botón, pequeñitas */
+  .mobile-pets {
+    display: flex !important;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 2rem;
+    pointer-events: none;
+  }
+  
+  .mobile-pets img {
+    width: 120px; /* Tamaño controlado para que no se vea gigante */
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* 3. Ajustamos el texto para que quepa bien */
+  .hero {
+    min-height: auto;
+    padding: 4rem 5% 2rem 5%;
+    background: #fdfdfd;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+  }
+  
+  .hero p {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+  }
+
+  nav { padding: 1rem 5%; }
+  .nav-links { display: none; }
 }
 
 /* Feature Cards */
