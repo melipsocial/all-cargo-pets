@@ -118,16 +118,16 @@ nav {
   color: white;
 }
 
-/* Hero Section Original Improved */
+/* Hero Section Original Improved - Fixed Desktop Version */
 .hero {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 5rem 5%;
-  background: radial-gradient(circle at 50% 50%, rgba(29, 53, 87, 0.1) 0%, rgba(253, 253, 253, 1) 100%);
-  min-height: 80vh;
+  padding: 8rem 5% 5rem 5%;
+  background: radial-gradient(circle at 50% 50%, rgba(29, 53, 87, 0.08) 0%, rgba(253, 253, 253, 1) 100%);
+  min-height: 85vh;
   justify-content: center;
   overflow: hidden;
 }
@@ -136,15 +136,14 @@ nav {
   content: '';
   position: absolute;
   bottom: 0;
-  width: 320px;
-  height: 320px;
+  width: 350px;
+  height: 350px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom center;
   mix-blend-mode: multiply;
-  opacity: 0.9;
+  opacity: 0.95;
   z-index: 0;
-  transition: all 0.3s ease;
 }
 
 .hero::before {
@@ -157,37 +156,70 @@ nav {
   background-image: url('/static/corner_cat.png');
 }
 
-/* Mobile Fix for Corner Pets Overlap */
+/* Hidden by default, only for mobile */
+.mobile-pets {
+  display: none;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 2rem;
+}
+
+/* Responsive Fix - Only for Mobile */
 @media (max-width: 768px) {
   .hero::before, .hero::after {
-    display: none; /* Ocultar mascotas en móvil para no tapar el texto */
+    display: none !important; /* Quitar mascotas de las esquinas en PC */
   }
+  
+  .mobile-pets {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 3rem;
+  }
+  
+  .mobile-pets img {
+    width: 45%;
+    height: auto;
+    border-radius: 12px;
+  }
+
   .hero {
-    min-height: 60vh;
-    padding-top: 3rem;
+    min-height: auto;
+    padding: 4rem 5% 2rem 5%;
+    background: #fdfdfd;
   }
-  .hero h1 { font-size: 2.2rem; }
+  
+  .hero h1 {
+    font-size: 2rem; /* Texto más pequeño en celular */
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .hero > * {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: var(--primary);
   margin-bottom: 1.5rem;
   line-height: 1.1;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .hero p {
   font-size: 1.25rem;
   color: #555;
-  margin-bottom: 3rem;
-  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  max-width: 700px;
 }
 
 /* Feature Cards Original Style */
