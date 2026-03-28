@@ -118,7 +118,7 @@ nav {
   color: white;
 }
 
-/* Hero Section Original Improved - Fixed Desktop Version */
+/* --- HERO SECTION (DESKTOP) --- */
 .hero {
   position: relative;
   display: flex;
@@ -132,6 +132,7 @@ nav {
   overflow: hidden;
 }
 
+/* Mascotas en las esquinas (SOLO DESKTOP) */
 .hero::before, .hero::after {
   content: '';
   position: absolute;
@@ -156,51 +157,6 @@ nav {
   background-image: url('/static/corner_cat.png');
 }
 
-/* Hidden by default, only for mobile */
-.mobile-pets {
-  display: none;
-  width: 100%;
-  max-width: 400px;
-  margin-top: 2rem;
-}
-
-/* Responsive Fix - Only for Mobile */
-@media (max-width: 768px) {
-  .hero::before, .hero::after {
-    display: none !important; /* Quitar mascotas de las esquinas en PC */
-  }
-  
-  .mobile-pets {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 3rem;
-  }
-  
-  .mobile-pets img {
-    width: 45%;
-    height: auto;
-    border-radius: 12px;
-  }
-
-  .hero {
-    min-height: auto;
-    padding: 4rem 5% 2rem 5%;
-    background: #fdfdfd;
-  }
-  
-  .hero h1 {
-    font-size: 2rem; /* Texto más pequeño en celular */
-    margin-bottom: 1rem;
-    letter-spacing: -1px;
-  }
-  
-  .hero p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-}
-
 .hero > * {
   position: relative;
   z-index: 10;
@@ -222,47 +178,53 @@ nav {
   max-width: 700px;
 }
 
-/* Feature Cards Original Style */
-.features {
-  padding: 5rem 5%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  background: var(--white);
+/* Contenedor de mascotas para móvil (OCULTO EN DESKTOP) */
+.mobile-pets {
+  display: none !important;
 }
 
-.feature-card {
-  padding: 3rem;
-  border-radius: 16px;
-  background: #fcfcfc;
-  text-align: center;
-  border: 1px solid var(--border);
-  transition: transform 0.3s ease;
-}
-
-.feature-card:hover { transform: translateY(-5px); }
-
-
-/* Mobile Adjustments */
+/* --- RESPONSIVE (CELULAR) --- */
 @media (max-width: 768px) {
-  nav { padding: 1rem 5%; }
-  .nav-links { display: none; }
-  
-  .hero-modern { padding-top: 5rem; }
-  .floating-bubble {
-    width: 60px;
-    height: 60px;
-    border-width: 1px;
+  /* 1. Quitamos las mascotas de las esquinas */
+  .hero::before, .hero::after {
+    display: none !important;
   }
   
-  .bubble-1 { top: 5%; left: 5%; }
-  .bubble-2 { bottom: 5%; left: 5%; top: auto; }
-  .bubble-3 { top: 7%; right: 5%; }
-  .bubble-4 { bottom: 8%; right: 10%; top: auto; }
+  /* 2. Mostramos las mascotas abajo del botón, pequeñitas */
+  .mobile-pets {
+    display: flex !important;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 2rem;
+    pointer-events: none;
+  }
   
-  section { padding: 5rem 8%; }
-  .about-section { grid-template-columns: 1fr; gap: 3rem; }
-  .section-title { font-size: 2rem; }
+  .mobile-pets img {
+    width: 120px; /* Tamaño controlado para que no se vea gigante */
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* 3. Ajustamos el texto para que quepa bien */
+  .hero {
+    min-height: auto;
+    padding: 4rem 5% 2rem 5%;
+    background: #fdfdfd;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+  }
+  
+  .hero p {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+  }
+
+  nav { padding: 1rem 5%; }
+  .nav-links { display: none; }
 }
 
 /* Feature Cards */
