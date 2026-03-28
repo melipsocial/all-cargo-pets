@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Leads Mascotas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        .filter-bar {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            display: flex;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="admin-layout">
+
+    <aside class="sidebar">
+        <h2 style="margin-bottom: 2rem;">🐾 Admin</h2>
+        <ul style="list-style: none;">
+            <li style="margin-bottom: 1rem;"><a href="/dashboard" style="color:white; text-decoration:none; font-weight:bold;">📋 Leads Captados</a></li>
+            <li style="margin-bottom: 1rem;"><a href="/" style="color:rgba(255,255,255,0.7); text-decoration:none;">🌍 Ver Plataforma</a></li>
+        </ul>
+    </aside>
+
+    <main class="admin-content">
+        <h1>Gestión de Leads Recibidos</h1>
+        <p style="color: #666; margin-bottom: 2rem;">Revisa y asigna los casos de viaje y traslado internacional.</p>
+
+        <div class="filter-bar">
+            <!-- Simple filter visualization for MVP -->
+            <input type="text" id="search" placeholder="Buscar por nombre..." style="padding: 0.5rem; border:1px solid #ddd; border-radius:4px; flex-grow:1;">
+            <button class="btn-primary" onclick="loadLeads()">Refrescar Datos</button>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>ID / Fecha</th>
+                    <th>Cliente / Contacto</th>
+                    <th>Viaje</th>
+                    <th>Urgencia</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="leads-body">
+                <!-- Se poblará vía JS -->
+                <tr><td colspan="6" style="text-align:center;">Cargando leads...</td></tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Modal Detalles -->
+    <div class="modal-overlay" id="leadModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <h2 id="modal-name">Detalles de Solicitud</h2>
+            <div class="detail-grid" id="modal-details">
+                <!-- Se poblará vía JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>

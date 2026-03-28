@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Viaje Mascota</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <nav style="position: relative; z-index: 10;">
+        <a href="/" class="logo">
+            <img src="/static/logo.png" alt="All Cargo Pets" style="height: 50px; width: auto;">
+        </a>
+    </nav>
+
+    <!-- Trail de Huellas Decorativas -->
+    <div class="paw-trail">
+        <!-- SVGs of Paws -->
+        <svg class="paw paw-1" viewBox="0 0 512 512" fill="var(--primary)"><path d="M226.5 92.9c14.3 7.3 22.8 23 21 38.6l-5.4 46.5c-1.6 13.9-10.8 25.4-23.7 30l-44 15.6c-18.2 6.5-38-3.4-44.1-21.9L115.6 156c-4.4-13.4 .7-28 12.3-35.1l39.5-24c18-11 41.7-10.4 59.1 4zm183.1 35.5c22.5-9 48.7 1.5 58.6 23.8l20.4 46c5.7 12.8 1.9 27.6-9.1 36.3l-37 29.3c-14.4 11.4-34.9 10.3-48.1-2.5l-33.6-32.5c-9.6-9.3-12-23.5-6.1-35.4l20.8-42.3c7.2-14.6 19.5-25.7 34.1-22.7zM108 266.9c-23.5-3.3-46.7 12.1-51.4 35.4l-11.2 56c-2.4 11.8 1.4 23.9 10.2 31.9l36.3 32.9c14.2 12.9 35.6 13.1 50-1L188 382.4c10-9.8 13.5-24.3 9-37.4l-18-52.1c-6-17.4-21.8-29.3-40-29.3H108zm267.6 102c9.2-9.6 23.2-13.9 36.5-11.2l53.9 10.8c18.3 3.7 31.3 20 31.3 38.7v47.2c0 14.1-11.4 25.6-25.5 25.6H428c-18.7 0-35.9-11.5-41.6-29.4l-16-49.8c-4.4-13.7-2.9-28.7 5.2-41.9zM256 224c31.1 0 60.5 13.6 80.8 37.1l11.6 13.4c11.7 13.5 16 31.6 12.5 49l-11.7 58.7c-4 20-17.5 36.8-36.1 44.8l-37.6 16.2c-15.3 6.6-32.7 6.6-48 0l-37.6-16.2c-18.6-8-32.1-24.8-36.1-44.8l-11.7-58.7c-3.5-17.4 .8-35.5 12.5-49l11.6-13.4C226.5 241.6 235 233 246.3 227.6C249.4 226.1 252.7 224 256 224z"/></svg>
+        <svg class="paw paw-2" viewBox="0 0 512 512" fill="var(--primary)"><path d="M226.5 92.9c14.3 7.3 22.8 23 21 38.6l-5.4 46.5c-1.6 13.9-10.8 25.4-23.7 30l-44 15.6c-18.2 6.5-38-3.4-44.1-21.9L115.6 156c-4.4-13.4 .7-28 12.3-35.1l39.5-24c18-11 41.7-10.4 59.1 4zm183.1 35.5c22.5-9 48.7 1.5 58.6 23.8l20.4 46c5.7 12.8 1.9 27.6-9.1 36.3l-37 29.3c-14.4 11.4-34.9 10.3-48.1-2.5l-33.6-32.5c-9.6-9.3-12-23.5-6.1-35.4l20.8-42.3c7.2-14.6 19.5-25.7 34.1-22.7zM108 266.9c-23.5-3.3-46.7 12.1-51.4 35.4l-11.2 56c-2.4 11.8 1.4 23.9 10.2 31.9l36.3 32.9c14.2 12.9 35.6 13.1 50-1L188 382.4c10-9.8 13.5-24.3 9-37.4l-18-52.1c-6-17.4-21.8-29.3-40-29.3H108zm267.6 102c9.2-9.6 23.2-13.9 36.5-11.2l53.9 10.8c18.3 3.7 31.3 20 31.3 38.7v47.2c0 14.1-11.4 25.6-25.5 25.6H428c-18.7 0-35.9-11.5-41.6-29.4l-16-49.8c-4.4-13.7-2.9-28.7 5.2-41.9zM256 224c31.1 0 60.5 13.6 80.8 37.1l11.6 13.4c11.7 13.5 16 31.6 12.5 49l-11.7 58.7c-4 20-17.5 36.8-36.1 44.8l-37.6 16.2c-15.3 6.6-32.7 6.6-48 0l-37.6-16.2c-18.6-8-32.1-24.8-36.1-44.8l-11.7-58.7c-3.5-17.4 .8-35.5 12.5-49l11.6-13.4C226.5 241.6 235 233 246.3 227.6C249.4 226.1 252.7 224 256 224z"/></svg>
+        <svg class="paw paw-3" viewBox="0 0 512 512" fill="var(--primary)"><path d="M226.5 92.9c14.3 7.3 22.8 23 21 38.6l-5.4 46.5c-1.6 13.9-10.8 25.4-23.7 30l-44 15.6c-18.2 6.5-38-3.4-44.1-21.9L115.6 156c-4.4-13.4 .7-28 12.3-35.1l39.5-24c18-11 41.7-10.4 59.1 4zm183.1 35.5c22.5-9 48.7 1.5 58.6 23.8l20.4 46c5.7 12.8 1.9 27.6-9.1 36.3l-37 29.3c-14.4 11.4-34.9 10.3-48.1-2.5l-33.6-32.5c-9.6-9.3-12-23.5-6.1-35.4l20.8-42.3c7.2-14.6 19.5-25.7 34.1-22.7zM108 266.9c-23.5-3.3-46.7 12.1-51.4 35.4l-11.2 56c-2.4 11.8 1.4 23.9 10.2 31.9l36.3 32.9c14.2 12.9 35.6 13.1 50-1L188 382.4c10-9.8 13.5-24.3 9-37.4l-18-52.1c-6-17.4-21.8-29.3-40-29.3H108zm267.6 102c9.2-9.6 23.2-13.9 36.5-11.2l53.9 10.8c18.3 3.7 31.3 20 31.3 38.7v47.2c0 14.1-11.4 25.6-25.5 25.6H428c-18.7 0-35.9-11.5-41.6-29.4l-16-49.8c-4.4-13.7-2.9-28.7 5.2-41.9zM256 224c31.1 0 60.5 13.6 80.8 37.1l11.6 13.4c11.7 13.5 16 31.6 12.5 49l-11.7 58.7c-4 20-17.5 36.8-36.1 44.8l-37.6 16.2c-15.3 6.6-32.7 6.6-48 0l-37.6-16.2c-18.6-8-32.1-24.8-36.1-44.8l-11.7-58.7c-3.5-17.4 .8-35.5 12.5-49l11.6-13.4C226.5 241.6 235 233 246.3 227.6C249.4 226.1 252.7 224 256 224z"/></svg>
+        <svg class="paw paw-4" viewBox="0 0 512 512" fill="var(--primary)"><path d="M226.5 92.9c14.3 7.3 22.8 23 21 38.6l-5.4 46.5c-1.6 13.9-10.8 25.4-23.7 30l-44 15.6c-18.2 6.5-38-3.4-44.1-21.9L115.6 156c-4.4-13.4 .7-28 12.3-35.1l39.5-24c18-11 41.7-10.4 59.1 4zm183.1 35.5c22.5-9 48.7 1.5 58.6 23.8l20.4 46c5.7 12.8 1.9 27.6-9.1 36.3l-37 29.3c-14.4 11.4-34.9 10.3-48.1-2.5l-33.6-32.5c-9.6-9.3-12-23.5-6.1-35.4l20.8-42.3c7.2-14.6 19.5-25.7 34.1-22.7zM108 266.9c-23.5-3.3-46.7 12.1-51.4 35.4l-11.2 56c-2.4 11.8 1.4 23.9 10.2 31.9l36.3 32.9c14.2 12.9 35.6 13.1 50-1L188 382.4c10-9.8 13.5-24.3 9-37.4l-18-52.1c-6-17.4-21.8-29.3-40-29.3H108zm267.6 102c9.2-9.6 23.2-13.9 36.5-11.2l53.9 10.8c18.3 3.7 31.3 20 31.3 38.7v47.2c0 14.1-11.4 25.6-25.5 25.6H428c-18.7 0-35.9-11.5-41.6-29.4l-16-49.8c-4.4-13.7-2.9-28.7 5.2-41.9zM256 224c31.1 0 60.5 13.6 80.8 37.1l11.6 13.4c11.7 13.5 16 31.6 12.5 49l-11.7 58.7c-4 20-17.5 36.8-36.1 44.8l-37.6 16.2c-15.3 6.6-32.7 6.6-48 0l-37.6-16.2c-18.6-8-32.1-24.8-36.1-44.8l-11.7-58.7c-3.5-17.4 .8-35.5 12.5-49l11.6-13.4C226.5 241.6 235 233 246.3 227.6C249.4 226.1 252.7 224 256 224z"/></svg>
+        <svg class="paw paw-5" viewBox="0 0 512 512" fill="var(--primary)"><path d="M226.5 92.9c14.3 7.3 22.8 23 21 38.6l-5.4 46.5c-1.6 13.9-10.8 25.4-23.7 30l-44 15.6c-18.2 6.5-38-3.4-44.1-21.9L115.6 156c-4.4-13.4 .7-28 12.3-35.1l39.5-24c18-11 41.7-10.4 59.1 4zm183.1 35.5c22.5-9 48.7 1.5 58.6 23.8l20.4 46c5.7 12.8 1.9 27.6-9.1 36.3l-37 29.3c-14.4 11.4-34.9 10.3-48.1-2.5l-33.6-32.5c-9.6-9.3-12-23.5-6.1-35.4l20.8-42.3c7.2-14.6 19.5-25.7 34.1-22.7zM108 266.9c-23.5-3.3-46.7 12.1-51.4 35.4l-11.2 56c-2.4 11.8 1.4 23.9 10.2 31.9l36.3 32.9c14.2 12.9 35.6 13.1 50-1L188 382.4c10-9.8 13.5-24.3 9-37.4l-18-52.1c-6-17.4-21.8-29.3-40-29.3H108zm267.6 102c9.2-9.6 23.2-13.9 36.5-11.2l53.9 10.8c18.3 3.7 31.3 20 31.3 38.7v47.2c0 14.1-11.4 25.6-25.5 25.6H428c-18.7 0-35.9-11.5-41.6-29.4l-16-49.8c-4.4-13.7-2.9-28.7 5.2-41.9zM256 224c31.1 0 60.5 13.6 80.8 37.1l11.6 13.4c11.7 13.5 16 31.6 12.5 49l-11.7 58.7c-4 20-17.5 36.8-36.1 44.8l-37.6 16.2c-15.3 6.6-32.7 6.6-48 0l-37.6-16.2c-18.6-8-32.1-24.8-36.1-44.8l-11.7-58.7c-3.5-17.4 .8-35.5 12.5-49l11.6-13.4C226.5 241.6 235 233 246.3 227.6C249.4 226.1 252.7 224 256 224z"/></svg>
+        <svg class="paw paw-6" viewBox="0 0 512 512" fill="var(--primary)"><path d="M226.5 92.9c14.3 7.3 22.8 23 21 38.6l-5.4 46.5c-1.6 13.9-10.8 25.4-23.7 30l-44 15.6c-18.2 6.5-38-3.4-44.1-21.9L115.6 156c-4.4-13.4 .7-28 12.3-35.1l39.5-24c18-11 41.7-10.4 59.1 4zm183.1 35.5c22.5-9 48.7 1.5 58.6 23.8l20.4 46c5.7 12.8 1.9 27.6-9.1 36.3l-37 29.3c-14.4 11.4-34.9 10.3-48.1-2.5l-33.6-32.5c-9.6-9.3-12-23.5-6.1-35.4l20.8-42.3c7.2-14.6 19.5-25.7 34.1-22.7zM108 266.9c-23.5-3.3-46.7 12.1-51.4 35.4l-11.2 56c-2.4 11.8 1.4 23.9 10.2 31.9l36.3 32.9c14.2 12.9 35.6 13.1 50-1L188 382.4c10-9.8 13.5-24.3 9-37.4l-18-52.1c-6-17.4-21.8-29.3-40-29.3H108zm267.6 102c9.2-9.6 23.2-13.9 36.5-11.2l53.9 10.8c18.3 3.7 31.3 20 31.3 38.7v47.2c0 14.1-11.4 25.6-25.5 25.6H428c-18.7 0-35.9-11.5-41.6-29.4l-16-49.8c-4.4-13.7-2.9-28.7 5.2-41.9zM256 224c31.1 0 60.5 13.6 80.8 37.1l11.6 13.4c11.7 13.5 16 31.6 12.5 49l-11.7 58.7c-4 20-17.5 36.8-36.1 44.8l-37.6 16.2c-15.3 6.6-32.7 6.6-48 0l-37.6-16.2c-18.6-8-32.1-24.8-36.1-44.8l-11.7-58.7c-3.5-17.4 .8-35.5 12.5-49l11.6-13.4C226.5 241.6 235 233 246.3 227.6C249.4 226.1 252.7 224 256 224z"/></svg>
+        <svg class="paw paw-7" viewBox="0 0 512 512" fill="var(--primary)"><path d="M226.5 92.9c14.3 7.3 22.8 23 21 38.6l-5.4 46.5c-1.6 13.9-10.8 25.4-23.7 30l-44 15.6c-18.2 6.5-38-3.4-44.1-21.9L115.6 156c-4.4-13.4 .7-28 12.3-35.1l39.5-24c18-11 41.7-10.4 59.1 4zm183.1 35.5c22.5-9 48.7 1.5 58.6 23.8l20.4 46c5.7 12.8 1.9 27.6-9.1 36.3l-37 29.3c-14.4 11.4-34.9 10.3-48.1-2.5l-33.6-32.5c-9.6-9.3-12-23.5-6.1-35.4l20.8-42.3c7.2-14.6 19.5-25.7 34.1-22.7zM108 266.9c-23.5-3.3-46.7 12.1-51.4 35.4l-11.2 56c-2.4 11.8 1.4 23.9 10.2 31.9l36.3 32.9c14.2 12.9 35.6 13.1 50-1L188 382.4c10-9.8 13.5-24.3 9-37.4l-18-52.1c-6-17.4-21.8-29.3-40-29.3H108zm267.6 102c9.2-9.6 23.2-13.9 36.5-11.2l53.9 10.8c18.3 3.7 31.3 20 31.3 38.7v47.2c0 14.1-11.4 25.6-25.5 25.6H428c-18.7 0-35.9-11.5-41.6-29.4l-16-49.8c-4.4-13.7-2.9-28.7 5.2-41.9zM256 224c31.1 0 60.5 13.6 80.8 37.1l11.6 13.4c11.7 13.5 16 31.6 12.5 49l-11.7 58.7c-4 20-17.5 36.8-36.1 44.8l-37.6 16.2c-15.3 6.6-32.7 6.6-48 0l-37.6-16.2c-18.6-8-32.1-24.8-36.1-44.8l-11.7-58.7c-3.5-17.4 .8-35.5 12.5-49l11.6-13.4C226.5 241.6 235 233 246.3 227.6C249.4 226.1 252.7 224 256 224z"/></svg>
+    </div>
+
+    <div class="wizard-container" style="position:relative; z-index:10;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">¿Cómo te podemos ayudar hoy?</h2>
+        
+        <div class="step-indicator">
+            <div class="step active" id="step-id-1">1</div>
+            <div class="step" id="step-id-2">2</div>
+            <div class="step" id="step-id-3">3</div>
+            <div class="step" id="step-id-4">✔️</div>
+        </div>
+
+        <form id="leadForm">
+            <!-- P1: Tipo Solicitud -->
+            <div class="wizard-card active" id="card-1">
+                <div class="form-group">
+                    <label>¿Qué tipo de solicitud deseas realizar?</label>
+                    <div class="radio-cards">
+                        <label class="radio-card selected" onclick="selectRadioCard(this)">
+                            <input type="radio" name="tipo_solicitud" value="Viajar con mi mascota" checked>
+                            <span style="font-size: 2rem; margin-bottom: 0.5rem">💺</span>
+                            <span>Viajar con mi mascota</span>
+                        </label>
+                        <label class="radio-card" onclick="selectRadioCard(this)">
+                            <input type="radio" name="tipo_solicitud" value="Enviar / trasladar mi mascota">
+                            <span style="font-size: 2rem; margin-bottom: 0.5rem">✈️</span>
+                            <span>Enviar / trasladar mi mascota a otro país</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de servicio requerido</label>
+                    <select name="tipo_servicio">
+                        <option value="solo asesoría">Solo asesoría</option>
+                        <option value="gestión completa">Gestión completa</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- P2: Datos Generales (Para ambos) -->
+            <div class="wizard-card" id="card-2">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label>País de Origen</label>
+                        <input type="text" name="pais_origen" required placeholder="Ej: México">
+                    </div>
+                    <div class="form-group">
+                        <label>País de Destino</label>
+                        <input type="text" name="pais_destino" required placeholder="Ej: España">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Fecha Estimada del Viaje / Traslado</label>
+                    <input type="date" name="fecha_estimada" required>
+                </div>
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem">
+                    <h4>Datos de la Mascota 🐾</h4>
+                    <br>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <input type="text" name="tipo_mascota" placeholder="Perro, Gato..." required class="form-group input">
+                        <input type="text" name="raza" placeholder="Raza" required>
+                        <input type="text" name="peso" placeholder="Peso (Kg)" required>
+                        <input type="text" name="edad" placeholder="Edad" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- P3: Datos Específicos & Personales -->
+            <div class="wizard-card" id="card-3">
+                <div id="dynamic-viaje" style="display:none; padding: 1rem; background: #e0e7ff; border-radius: 8px; margin-bottom:1rem;">
+                    <h4>Detalles del Viaje</h4><br>
+                    <input type="text" name="aerolinea" placeholder="¿Ya tienes aerolínea? (Opcional)" style="margin-bottom:1rem; width:100%; padding:0.85rem">
+                    <select name="cabina_o_bodega" style="width:100%; padding:0.85rem">
+                        <option value="">¿Dónde viaja la mascota?</option>
+                        <option value="cabina">En Cabina conmigo</option>
+                        <option value="bodega">En Bodega</option>
+                        <option value="no se">Aún no sé</option>
+                    </select>
+                </div>
+
+                <div id="dynamic-traslado" style="display:none; padding: 1rem; background: #e0e7ff; border-radius: 8px; margin-bottom:1rem;">
+                    <h4>Detalles del Traslado</h4><br>
+                     <select name="acompanamiento" style="width:100%; padding:0.85rem">
+                        <option value="">¿La mascota viaja sola o acompañada?</option>
+                        <option value="sola">Viaja Sola (Cargo)</option>
+                        <option value="acompanada">Llevará acompañante (Tutor externo)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Documentación Actual con la que cuentas</label>
+                    <select name="documentacion_actual">
+                        <option value="nada">Aún nada / No sé por dónde empezar</option>
+                        <option value="vacunas">Solo vacunas al día</option>
+                        <option value="chip_vacunas">Microchip y vacunas</option>
+                        <option value="pasaporte">Pasaporte listo</option>
+                    </select>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label>Tu Nombre Completo</label>
+                        <input type="text" name="nombre_completo" required placeholder="Juan Pérez">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap:1rem;">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" required placeholder="correo@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp</label>
+                            <input type="text" name="whatsapp" required placeholder="+52 1234567890">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- P4: Success -->
+            <div class="wizard-card" id="card-4" style="text-align: center; padding: 2rem 0;">
+                <div style="font-size: 4rem; color: var(--success); margin-bottom: 1rem;">✔️</div>
+                <h3 id="success-title">¡Solicitud Recibida!</h3>
+                <p id="success-message">Gracias. Un asesor revisará tu caso y se pondrá en contacto pronto por WhatsApp o Email.</p>
+                <br>
+                <a href="/" class="btn-primary">Volver al inicio</a>
+            </div>
+
+            <div class="wizard-footer" id="wizard-footer">
+                <button type="button" class="btn-outline" id="btn-prev" style="visibility: hidden;">Anterior</button>
+                <button type="button" class="btn-primary" id="btn-next">Siguiente paso ➔</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/static/js/wizard.js"></script>
+</body>
+</html>
