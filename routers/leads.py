@@ -5,6 +5,7 @@ from models import Lead
 from pydantic import BaseModel, Field
 from typing import Optional
 from services.clasificacion import pre_calificar_lead
+from services.webhooks import enviar_a_webhook
 
 router = APIRouter()
 
@@ -43,8 +44,8 @@ def create_lead(lead_in: LeadCreate, background_tasks: BackgroundTasks, db: Sess
     db.commit()
     db.refresh(new_lead)
     
-    # Aquí podríamos agregar "background_tasks" para mandar a Google Sheets/Webhook/Email
-    # background_tasks.add_task(enviar_a_webhook, new_lead)
+    # Enviar al Excel (Google Sheets) vía Zapier/Make en segundo plano
+    background_tasks.add_task(enviar_a_webhook, datos_clasificados, new_lead.id)
     
     estado_msg = "Un asesor revisará tu caso y te contactará pronto."
     if new_lead.urgencia == "alta":
