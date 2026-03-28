@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Cargo Pets | Tu mascota segura alrededor del mundo</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <!-- El 'v=99' es para que se actualice sí o sí -->
-    <link rel="stylesheet" href="/static/css/styles.css?v=99">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
+
     <nav>
         <a href="/" class="logo">
             <img src="/static/logo.png" alt="All Cargo Pets" style="height: 50px; width: auto;">
@@ -24,6 +24,12 @@
             <p>Expertos en traslados internacionales. Gestionamos trámites sanitarios, aerolíneas y aduanas para que tu peludo llegue seguro y feliz.</p>
             <div style="display: flex; gap: 1rem; justify-content: center;">
                 <a href="/solicitud" class="btn-primary">Cotizar Envio o Viaje</a>
+            </div>
+            
+            <!-- Solo visible en móviles -->
+            <div class="mobile-pets">
+                <img src="/static/corner_dog.png" alt="Perro">
+                <img src="/static/corner_cat.png" alt="Gato">
             </div>
         </section>
 
@@ -45,8 +51,10 @@
             </div>
         </section>
     </main>
-    <footer style="padding: 2rem; text-align: center; border-top: 1px solid #eee;">
-        <p>&copy; 2026 All Cargo Pets</p>
+
+    <footer style="padding: 3rem 5%; background: var(--white); text-align: center; border-top: 1px solid var(--border);">
+        <p>&copy; 2026 All Cargo Pets. Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>
